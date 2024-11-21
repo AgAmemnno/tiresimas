@@ -100,6 +100,20 @@ html {
 
   .movie video {
     width: 100%;
-    max-width: 920px;/*PC版での最大幅*/
+    max-width: 920px;
+    }
+}
+
+
+@media (max-height: 400px) {
+    .movie{
+        overflow: hidden;
+        position: absolute;
+        top: -48px;
+        left: -168px;
+        width: 139%;
+        height: 130%;
+        z-index: 1;
+        transform: scale(0.8);
     }
 }
