@@ -90,3 +90,16 @@ html {
   color: snow;
   opacity: 0.8;
 }
+
+@media (max-width: 600px) {
+  .visual {
+    width: 100%;
+    margin: auto;
+    padding: 4% 4% 4% 4%;
+  }
+
+  .movie video {
+    width: 100%;
+    max-width: 920px;/*PC版での最大幅*/
+    }
+}
