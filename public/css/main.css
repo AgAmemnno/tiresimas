@@ -109,11 +109,10 @@ html {
     .movie{
         overflow: hidden;
         position: absolute;
-        top: -48px;
+        top: -81px;
         left: -168px;
         width: 139%;
-        height: 130%;
+        height: 147%;
         z-index: 1;
-        transform: scale(0.8);
+        transform: scale(0.6);
     }
-}
