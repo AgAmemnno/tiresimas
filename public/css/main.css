@@ -1,0 +1,92 @@
+*{
+    box-sizing:border-box;
+}
+body {
+    background:none; 
+;
+}
+html {
+    height: 100vh;
+    display: grid;
+    place-items: self-end;
+    --middleLine: transparent 0 50%, #0004 calc(50% - 2px), #0004 calc(50% + 2px),
+        transparent calc(50% + 2px) 100%;
+    background:  repeating-conic-gradient( from 0deg, lightgray 0 0.3deg, transparent 0.44deg 90deg ),
+        linear-gradient(0deg,  var(--middleLine)),
+        linear-gradient(90deg, var(--middleLine)),
+        url(https://grainy-gradients.vercel.app/noise.svg) center;
+    background-size: 100% 100% , 101% 101%,  120% 120%, 1200px;
+    animation: noisy 2s steps(5,end) infinite;
+}
+.spinner-border:not(.counter) {
+    position: fixed;
+    top: 42%;
+    left: 45%;
+    width: 2em;
+    height: 2em;
+    padding: 2px;
+    border-color: #0008;
+    border-bottom-color: transparent;
+    box-shadow: 0 0 0 1px white, inset 0 0 0 1px white, 0 0 0 2px black,
+        inset 0 0 0 2px black;
+    scale: 3;
+    background: none;
+}
+.counter.spinner-border.border-none {
+    height: 100%;
+    width: 100%;
+    border: 0 solid transparent;
+    animation-direction: reverse;
+    background: #8888;
+    translate:.4px;
+}
+
+@keyframes noisy {
+    from {
+        background-position:0 0 , 0 51% , 49% 0, 0 0;
+        }
+    25% {background-position:0 0 , 0 10% , 53% 100%, 100% 100%}
+    50% {background-position:0 0 , 0 25% , 51% 100%,  50% 0%}
+    75% {background-position:0 0 , 0 60% , 48% 100%, 10% 70%}
+    to{
+        background-position:0 0 , 0 75% ,  52% 100%,70% 30%
+    }
+}
+
+
+.visual {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+}
+.movie {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.movie video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: auto;
+	height: auto;
+	min-width: 100%;
+	min-height: 100%;
+	transform: translate(-50%,-50%);
+}
+
+#play-pause-button{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 99999;
+  font-size: 97px;
+  cursor: pointer;
+  color: snow;
+  opacity: 0.8;
+}
